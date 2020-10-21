@@ -4,7 +4,7 @@
 
 Status:
 [![npm version](https://img.shields.io/npm/v/cz-conventional-changelog.svg?style=flat-square)](https://www.npmjs.org/package/cz-conventional-changelog)
-![Build Status](https://github.com/Skywire/cz-conventional-changelog/workflows/Node.js%20CI/badge.svg)
+![Build Status](https://github.com/Skywire/cz-conventional-changelog/workflows/Build%20Status/badge.svg)
 
 Part of the [commitizen](https://github.com/commitizen/cz-cli) family. Prompts for [conventional changelog](https://github.com/conventional-changelog/conventional-changelog) standard.
 
