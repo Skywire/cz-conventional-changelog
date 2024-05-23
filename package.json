@@ -1,6 +1,6 @@
 {
   "name": "@skywire-london/cz-conventional-changelog",
-  "version": "3.4.2",
+  "version": "4.0.0",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "index.js",
   "scripts": {
