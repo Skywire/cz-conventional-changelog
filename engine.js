@@ -5,6 +5,7 @@ var map = require('lodash.map');
 var longest = require('longest');
 var chalk = require('chalk');
 const branchName = require('current-git-branch');
+const fs = require('fs');
 
 var filter = function(array) {
   return array.filter(function(x) {
@@ -157,7 +158,10 @@ module.exports = function(options) {
           name: 'configUpdate',
           message: "Are you modifying the app/etc/config.php file?",
           choices: ['No', 'Yes'],
-          default: ['No']
+          default: ['No'],
+          when: function() {
+            return fs.existsSync('app/etc/config.php');
+          }
         },
       ]).then(function(answers) {
         var wrapOptions = {
