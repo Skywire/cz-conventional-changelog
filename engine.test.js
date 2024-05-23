@@ -15,7 +15,7 @@ var defaultOptions = {
   maxHeaderWidth: 100
 };
 
-var donedone = '1234'
+var cu_task = 'SKY-001'
 var type = 'func';
 var scope = 'everything';
 var subject = 'testing123';
@@ -39,9 +39,9 @@ describe('commit message', function() {
       commitMessage({
         type,
         subject,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}`);
   });
   it('only header w/ scope', function() {
     expect(
@@ -49,9 +49,9 @@ describe('commit message', function() {
         type,
         scope,
         subject,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}(${scope}): ${subject}`);
+    ).to.equal(`${cu_task}: ${type}(${scope}): ${subject}`);
   });
   it('header and body w/ out scope', function() {
     expect(
@@ -59,9 +59,9 @@ describe('commit message', function() {
         type,
         subject,
         body,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}\n\n${body}`);
   });
   it('header and body w/ scope', function() {
     expect(
@@ -70,9 +70,9 @@ describe('commit message', function() {
         scope,
         subject,
         body,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}(${scope}): ${subject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}(${scope}): ${subject}\n\n${body}`);
   });
   it('header and body w/ uppercase scope', function() {
     var upperCaseScope = scope.toLocaleUpperCase();
@@ -83,14 +83,14 @@ describe('commit message', function() {
           scope: upperCaseScope,
           subject,
           body,
-          donedone
+          cu_task
         },
         {
           ...defaultOptions,
           disableScopeLowerCase: true
         }
       )
-    ).to.equal(`DD#${donedone}: ${type}(${upperCaseScope}): ${subject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}(${upperCaseScope}): ${subject}\n\n${body}`);
   });
   it('header and body w/ uppercase subject', function() {
     var upperCaseSubject = subject.toLocaleUpperCase();
@@ -101,14 +101,14 @@ describe('commit message', function() {
           scope,
           subject: upperCaseSubject,
           body,
-          donedone
+          cu_task
         },
         {
           ...defaultOptions,
           disableSubjectLowerCase: true
         }
       )
-    ).to.equal(`DD#${donedone}: ${type}(${scope}): ${upperCaseSubject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}(${scope}): ${upperCaseSubject}\n\n${body}`);
   });
   it('header, body and issues w/ out scope', function() {
     expect(
@@ -116,9 +116,9 @@ describe('commit message', function() {
         type,
         subject,
         body,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}\n\n${body}`);
   });
   it('header, body and issues w/ scope', function() {
     expect(
@@ -127,9 +127,9 @@ describe('commit message', function() {
         scope,
         subject,
         body,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}(${scope}): ${subject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}(${scope}): ${subject}\n\n${body}`);
   });
   it('header, body and long issues w/ out scope', function() {
     expect(
@@ -137,9 +137,9 @@ describe('commit message', function() {
         type,
         subject,
         body,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}\n\n${body}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}\n\n${body}`);
   });
   it('header, body and long issues w/ scope', function() {
     expect(
@@ -148,10 +148,10 @@ describe('commit message', function() {
         scope,
         subject,
         body,
-        donedone
+        cu_task
       })
     ).to.equal(
-      `DD#${donedone}: ${type}(${scope}): ${subject}\n\n${body}`
+      `${cu_task}: ${type}(${scope}): ${subject}\n\n${body}`
     );
   });
   it('header and long body w/ out scope', function() {
@@ -160,9 +160,9 @@ describe('commit message', function() {
         type,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}\n\n${longBodySplit}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}\n\n${longBodySplit}`);
   });
   it('header and long body w/ scope', function() {
     expect(
@@ -171,9 +171,9 @@ describe('commit message', function() {
         scope,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`);
+    ).to.equal(`${cu_task}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`);
   });
   it('header, long body and issues w/ out scope', function() {
     expect(
@@ -181,9 +181,9 @@ describe('commit message', function() {
         type,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}\n\n${longBodySplit}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}\n\n${longBodySplit}`);
   });
   it('header, long body and issues w/ scope', function() {
     expect(
@@ -192,10 +192,10 @@ describe('commit message', function() {
         scope,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
     ).to.equal(
-      `DD#${donedone}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
+      `${cu_task}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
     );
   });
   it('header, long body and long issues w/ out scope', function() {
@@ -204,9 +204,9 @@ describe('commit message', function() {
         type,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
-    ).to.equal(`DD#${donedone}: ${type}: ${subject}\n\n${longBodySplit}`);
+    ).to.equal(`${cu_task}: ${type}: ${subject}\n\n${longBodySplit}`);
   });
   it('header, long body and long issues w/ scope', function() {
     expect(
@@ -215,10 +215,10 @@ describe('commit message', function() {
         scope,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
     ).to.equal(
-      `DD#${donedone}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
+      `${cu_task}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
     );
   });
   it('header, long body, breaking change, and long issues w/ scope', function() {
@@ -228,10 +228,10 @@ describe('commit message', function() {
         scope,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
     ).to.equal(
-      `DD#${donedone}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
+      `${cu_task}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
     );
   });
   it('header, long body, breaking change (with prefix entered), and long issues w/ scope', function() {
@@ -241,10 +241,10 @@ describe('commit message', function() {
         scope,
         subject,
         body: longBody,
-        donedone
+        cu_task
       })
     ).to.equal(
-      `DD#${donedone}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
+      `${cu_task}: ${type}(${scope}): ${subject}\n\n${longBodySplit}`
     );
   });
 });

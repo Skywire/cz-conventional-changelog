@@ -80,8 +80,8 @@ module.exports = function(options) {
       cz.prompt([
         {
           type: 'input',
-          name: 'donedone',
-          message: 'DoneDone Task ID e.g. 1123 (required):\n',
+          name: 'cu_task',
+          message: 'CU Task ID e.g. SKY-001 (required):\n',
           default: getCurrentBranch(),
           validate: function(input) {
             if (!input) {
@@ -171,7 +171,7 @@ module.exports = function(options) {
         // parentheses are only needed when a scope is present
         var scope = answers.scope ? '(' + answers.scope + ')' : '';
 
-        var task = answers.donedone ? 'DD#' + answers.donedone + ': ' : '';
+        var task = answers.cu_task ? answers.cu_task + ': ' : '';
 
         // Hard limit this line in the validate
         var head = task + answers.type + scope + ': ' + answers.subject;
